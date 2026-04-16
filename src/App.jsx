@@ -79,7 +79,8 @@ function buildDeckForSection(sectionId) {
     }
   })
 
-  return fisherYatesShuffle(poolWithOptionsShuffled)
+  // Shuffle all questions, then limit to a max of 30
+  return fisherYatesShuffle(poolWithOptionsShuffled).slice(0, 30)
 }
 
 function sectionMeta(sectionId) {
