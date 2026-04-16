@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
-import { questions } from './data/questions.js'
+import { acronymQuestions } from './data/questions-1.js'
+import { situationalQuestions } from './data/questions-2.js'
 import Scoreboard from './components/Scoreboard.jsx'
 import QuestionBlock from './components/QuestionBlock.jsx'
 import FeedbackSection from './components/FeedbackSection.jsx'
 import CelebrationPopup from './components/CelebrationPopup.jsx'
+import Griefed from './components/Griefed.jsx'
+import HomeScreen, { SECTIONS } from './components/HomeScreen.jsx'
+import { recordSectionAttempt } from './utils/scoreStorage.js'
 
 function fisherYatesShuffle(arr) {
   const a = [...arr]
@@ -14,25 +18,76 @@ function fisherYatesShuffle(arr) {
   return a
 }
 
+function buildDeckForSection(sectionId) {
+  let pool = []
+  if (sectionId === 'acronym') pool = acronymQuestions
+  else if (sectionId === 'situational') pool = situationalQuestions
+  else pool = [...acronymQuestions, ...situationalQuestions]
+
+  // Hat shuffle the options for each question
+  const poolWithOptionsShuffled = pool.map((q) => {
+    const correctAnswerText = q.options[q.correctAnswer]
+    const shuffledOptions = fisherYatesShuffle(q.options)
+    const newCorrectAnswerIndex = shuffledOptions.indexOf(correctAnswerText)
+
+    return {
+      ...q,
+      options: shuffledOptions,
+      correctAnswer: newCorrectAnswerIndex,
+    }
+  })
+
+  return fisherYatesShuffle(poolWithOptionsShuffled)
+}
+
+function sectionMeta(sectionId) {
+  return SECTIONS.find((s) => s.id === sectionId) ?? null
+}
+
 export default function App() {
+  const [activeSection, setActiveSection] = useState(null)
   const [deck, setDeck] = useState([])
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [score, setScore] = useState(0)
   const [streak, setStreak] = useState(0)
   const [eliminatedIndices, setEliminatedIndices] = useState([])
-  const [phase, setPhase] = useState('intro') // 'intro' | 'question' | 'feedback' | 'complete'
+  const [phase, setPhase] = useState('home') // 'home' | 'question' | 'feedback' | 'complete'
   const [showCelebration, setShowCelebration] = useState(false)
+  const [showGriefed, setShowGriefed] = useState(false)
+  const [homeRefresh, setHomeRefresh] = useState(0)
 
   const currentQuestion = deck[currentQuestionIndex]
   const isLastQuestion = currentQuestionIndex === deck.length - 1
+  const activeMeta = sectionMeta(activeSection)
 
-  // Auto-dismiss celebration after 5 seconds
   useEffect(() => {
     if (!showCelebration) return
     const t = setTimeout(() => setShowCelebration(false), 5000)
     return () => clearTimeout(t)
   }, [showCelebration])
+
+  useEffect(() => {
+    if (!showGriefed) return
+    const t = setTimeout(() => setShowGriefed(false), 5000)
+    return () => clearTimeout(t)
+  }, [showGriefed])
+
+  function startSection(sectionId) {
+    const newDeck = buildDeckForSection(sectionId)
+    if (newDeck.length === 0) return
+    setActiveSection(sectionId)
+    setDeck(newDeck)
+    setCurrentQuestionIndex(0)
+    setSelectedAnswer(null)
+    setScore(0)
+    setStreak(0)
+    setEliminatedIndices([])
+    setShowCelebration(false)
+    setShowGriefed(false)
+    setPhase('question')
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }
 
   function handleSelectAnswer(index) {
     if (phase !== 'question') return
@@ -44,6 +99,7 @@ export default function App() {
       setShowCelebration(true)
     } else {
       setStreak(0)
+      setShowGriefed(true)
     }
     setPhase('feedback')
   }
@@ -60,6 +116,9 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setEliminatedIndices([])
     if (isLastQuestion) {
+      if (activeSection) {
+        recordSectionAttempt(activeSection, { correct: score, total: deck.length })
+      }
       setPhase('complete')
     } else {
       setCurrentQuestionIndex(i => i + 1)
@@ -68,42 +127,36 @@ export default function App() {
     }
   }
 
-  function handleReset() {
+  function goHome() {
+    setActiveSection(null)
     setDeck([])
     setCurrentQuestionIndex(0)
     setSelectedAnswer(null)
     setScore(0)
     setStreak(0)
     setEliminatedIndices([])
-    setPhase('intro')
+    setPhase('home')
     setShowCelebration(false)
+    setShowGriefed(false)
+    setHomeRefresh(n => n + 1)
   }
 
-  // ── Intro screen ─────────────────────────────────────────────────────────
-  if (phase === 'intro') {
+  function retakeSection() {
+    if (!activeSection) {
+      goHome()
+      return
+    }
+    startSection(activeSection)
+  }
+
+  // ── Home / section picker ────────────────────────────────────────────────
+  if (phase === 'home') {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
-        <div className="bg-white rounded-2xl shadow-md px-6 py-8 max-w-lg w-full text-center">
-          <div className="text-6xl mb-4">🧠</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-2">
-            Recovery Counseling Quiz
-          </h1>
-          <p className="text-slate-500 mb-1 text-xs font-semibold uppercase tracking-widest">
-            M.R.S.T.D. · G.R.A.C.E. · O.A.R.S. · F.O.R.M. · U.P.R.
-          </p>
-          <p className="text-slate-600 mt-4 mb-8 leading-relaxed text-base">
-            Test your knowledge of the core frameworks used in drug and alcohol
-            recovery counseling. {questions.length} questions total — take your time
-            and read each explanation to reinforce your learning.
-          </p>
-          <button
-            onClick={() => { setDeck(fisherYatesShuffle(questions)); setPhase('question') }}
-            className="bg-blue-600 active:bg-blue-800 text-white font-bold px-8 py-4 rounded-2xl transition-colors duration-150 text-xl w-full min-h-[56px]"
-          >
-            Start Quiz
-          </button>
-        </div>
-      </div>
+      <HomeScreen
+        key={homeRefresh}
+        onStartSection={startSection}
+        onScoresChanged={() => setHomeRefresh(n => n + 1)}
+      />
     )
   }
 
@@ -130,19 +183,30 @@ export default function App() {
         {showCelebration && <CelebrationPopup streak={streak} onDismiss={() => setShowCelebration(false)} />}
         <div className="bg-white rounded-2xl shadow-md px-6 py-8 max-w-lg w-full text-center">
           <div className="text-6xl mb-4">🎓</div>
-          <h2 className="text-2xl font-bold text-slate-800 mb-2">Quiz Complete!</h2>
+          <h2 className="text-2xl font-bold text-slate-800 mb-1">Section Complete!</h2>
+          {activeMeta && (
+            <p className="text-sm text-slate-500 mb-2">{activeMeta.subtitle}</p>
+          )}
           <div className="text-7xl font-bold text-blue-600 my-4">{pct}%</div>
           <p className="text-slate-600 text-lg mb-1">
             You got <span className="font-bold text-slate-800">{score}</span> out of{' '}
             <span className="font-bold text-slate-800">{deck.length}</span> correct
           </p>
           <p className={`font-semibold mt-2 mb-8 text-base ${messageColor}`}>{message}</p>
-          <button
-            onClick={handleReset}
-            className="bg-blue-600 active:bg-blue-800 text-white font-bold px-8 py-4 rounded-2xl transition-colors duration-150 text-xl w-full min-h-[56px]"
-          >
-            Retake Quiz
-          </button>
+          <div className="space-y-3">
+            <button
+              onClick={retakeSection}
+              className="bg-blue-600 active:bg-blue-800 text-white font-bold px-8 py-4 rounded-2xl transition-colors duration-150 text-lg w-full min-h-[56px]"
+            >
+              Retake This Section
+            </button>
+            <button
+              onClick={goHome}
+              className="bg-white border border-slate-200 text-slate-700 active:bg-slate-100 font-semibold px-8 py-4 rounded-2xl transition-colors duration-150 text-lg w-full min-h-[56px]"
+            >
+              Back to Home
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -154,6 +218,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       {showCelebration && <CelebrationPopup streak={streak} onDismiss={() => setShowCelebration(false)} />}
+      {showGriefed && <Griefed onDismiss={() => setShowGriefed(false)} />}
 
       <div
         className="max-w-2xl mx-auto px-4 pt-4 pb-10 space-y-4"
@@ -163,6 +228,7 @@ export default function App() {
           score={score}
           total={deck.length}
           currentIndex={currentQuestionIndex}
+          sectionTitle={activeMeta?.subtitle}
         />
 
         <div className="bg-white rounded-2xl shadow-md p-5 space-y-4">
@@ -197,10 +263,10 @@ export default function App() {
 
         <div className="flex justify-center py-2">
           <button
-            onClick={handleReset}
+            onClick={goHome}
             className="text-slate-400 active:text-red-500 text-sm underline transition-colors duration-150 px-4 py-3 min-h-[44px]"
           >
-            Reset &amp; Start Over
+            Exit to Home
           </button>
         </div>
       </div>

@@ -1,8 +1,13 @@
-export default function Scoreboard({ score, total, currentIndex }) {
+export default function Scoreboard({ score, total, currentIndex, sectionTitle }) {
   const progress = ((currentIndex) / total) * 100
 
   return (
     <div className="bg-white rounded-xl shadow-sm px-4 pt-3 pb-2">
+      {sectionTitle && (
+        <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1">
+          {sectionTitle}
+        </p>
+      )}
       <div className="flex items-center justify-between mb-2">
         <span className="text-slate-600 font-medium text-sm">
           Question{' '}
