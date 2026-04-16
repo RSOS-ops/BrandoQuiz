@@ -62,10 +62,10 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
   return (
     <div className="min-h-screen bg-slate-50 p-4" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
       <div className="max-w-lg md:max-w-4xl mx-auto space-y-4">
-        <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center font-space">
-          <div className="text-5xl mb-3">🧠</div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-5 leading-tight tracking-tight">
-            Brandon's "They Can't Stop Me" Promotion Domination Quest
+        <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center font-black-ops tracking-wide">
+         /* <div className="text-5xl mb-3">🧠</div>/*
+          <h1 className="text-3xl md:text-4xl text-slate-800 mb-5 leading-tight">
+            Brandon's "They Can't Stop Me" Promotion Domination Mission
           </h1>
 
           <div className="border-t border-slate-100 pt-5">
