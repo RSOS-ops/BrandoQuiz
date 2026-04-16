@@ -48,6 +48,25 @@ function formatScore(scoreObj) {
   return `${scoreObj.correct} / ${scoreObj.total} (${pct}%)`
 }
 
+function getScoreColor(pct) {
+  if (pct <= 50) return '#ef4444' // text-red-500
+  if (pct >= 85) return '#22c55e' // text-green-500
+  
+  if (pct <= 70) {
+    const t = (pct - 50) / 20
+    const r = Math.round(239 + t * (234 - 239))
+    const g = Math.round(68 + t * (179 - 68))
+    const b = Math.round(68 + t * (8 - 68))
+    return `rgb(${r}, ${g}, ${b})`
+  } else {
+    const t = (pct - 70) / 15
+    const r = Math.round(234 + t * (34 - 234))
+    const g = Math.round(179 + t * (197 - 179))
+    const b = Math.round(8 + t * (94 - 8))
+    return `rgb(${r}, ${g}, ${b})`
+  }
+}
+
 export default function HomeScreen({ onStartSection, onScoresChanged }) {
   const scores = getAllSectionScores()
   const aggregate = getAggregateScore()
@@ -74,7 +93,10 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
             </p>
             {aggregate ? (
               <>
-                <div className="text-6xl font-bold text-blue-600">
+                <div 
+                  className="text-6xl font-bold" 
+                  style={{ color: getScoreColor(aggregate.percentage) }}
+                >
                   {aggregate.percentage.toFixed(1)}%
                 </div>
                 <p className="text-sm text-slate-500 mt-1 font-oxanium">
