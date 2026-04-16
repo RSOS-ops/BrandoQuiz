@@ -134,7 +134,7 @@ export default function Griefed({ griefImage, ultrarare, onDismiss }) {
       >
         <div className="px-8 pt-8 pb-6">
           {griefImage
-            ? <img src={griefImage} alt="" className={`${griefImage.includes('grief_28.png') ? 'w-[240px] h-[240px]' : 'w-[120px] h-[120px]'} object-contain mb-3 mx-auto`} />
+            ? <img src={griefImage} alt="" className={`${griefImage.includes('grief_28.png') ? 'w-[480px] h-[480px] max-w-none -ml-4' : 'w-[240px] h-[240px]'} object-contain mb-3 mx-auto`} />
             : <div className="text-6xl mb-3">🤡</div>
           }
           <p className="text-5xl font-extrabold text-red-600 mb-2 tracking-tight leading-tight">
