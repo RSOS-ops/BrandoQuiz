@@ -7,7 +7,47 @@ import FeedbackSection from './components/FeedbackSection.jsx'
 import CelebrationPopup from './components/CelebrationPopup.jsx'
 import Griefed from './components/Griefed.jsx'
 import HomeScreen, { SECTIONS } from './components/HomeScreen.jsx'
-import { recordSectionAttempt } from './utils/scoreStorage.js'
+import { recordSectionAttempt, incrementLifetimeWrongCount, incrementLifetimeWrongCountUltrarare } from './utils/scoreStorage.js'
+
+// ── Grief image hat logic ────────────────────────────────────────────────────
+const GRIEF_IMAGE_FILENAMES = [
+  'grief_01.png', 'grief_02.png', 'grief_03.png', 'grief_04.png', 'grief_05.png',
+  'grief_06.png', 'grief_07.png', 'grief_08.png', 'grief_09.png', 'grief_10.png',
+  'grief_11.png', 'grief_12.png', 'grief_13.png', 'grief_14.png', 'grief_15.png',
+  'grief_16.png', 'grief_17.png', 'grief_18.png', 'grief_19.png', 'grief_20.png',
+  'grief_21.png', 'grief_22.png', 'grief_23.png', 'grief_24.png', 'grief_25.png',
+  'grief_26.png', 'grief_27.png', 'grief_28.png'
+]
+
+let _wrongSinceLastImage = 0
+let _griefHat = []
+
+function getNextGriefImage() {
+  const lifetimeCount = incrementLifetimeWrongCount()
+  const ultrarareCount = incrementLifetimeWrongCountUltrarare()
+  _wrongSinceLastImage++
+
+  if (ultrarareCount >= 30 && ultrarareCount % 30 === 0) {
+    return { image: `${import.meta.env.BASE_URL}grief-images/grief-ultrarare.png`, ultrarare: true }
+  }
+
+  if (lifetimeCount >= 10 && (lifetimeCount - 10) % 20 === 0) {
+    return { image: `${import.meta.env.BASE_URL}grief-images/grief-rare.png`, ultrarare: false }
+  }
+
+  if (_wrongSinceLastImage >= 3) {
+    _wrongSinceLastImage = 0
+    if (_griefHat.length === 0) {
+      _griefHat = [...GRIEF_IMAGE_FILENAMES]
+      for (let i = _griefHat.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [_griefHat[i], _griefHat[j]] = [_griefHat[j], _griefHat[i]]
+      }
+    }
+    return { image: `${import.meta.env.BASE_URL}grief-images/${_griefHat.pop()}`, ultrarare: false }
+  }
+  return { image: null, ultrarare: false }
+}
 
 function fisherYatesShuffle(arr) {
   const a = [...arr]
@@ -55,6 +95,8 @@ export default function App() {
   const [phase, setPhase] = useState('home') // 'home' | 'question' | 'feedback' | 'complete'
   const [showCelebration, setShowCelebration] = useState(false)
   const [showGriefed, setShowGriefed] = useState(false)
+  const [griefImage, setGriefImage] = useState(null)
+  const [griefUltrarare, setGriefUltrarare] = useState(false)
   const [homeRefresh, setHomeRefresh] = useState(0)
 
   const currentQuestion = deck[currentQuestionIndex]
@@ -69,9 +111,9 @@ export default function App() {
 
   useEffect(() => {
     if (!showGriefed) return
-    const t = setTimeout(() => setShowGriefed(false), 5000)
+    const t = setTimeout(() => setShowGriefed(false), griefUltrarare ? 7000 : 5000)
     return () => clearTimeout(t)
-  }, [showGriefed])
+  }, [showGriefed, griefUltrarare])
 
   function startSection(sectionId) {
     const newDeck = buildDeckForSection(sectionId)
@@ -99,6 +141,9 @@ export default function App() {
       setShowCelebration(true)
     } else {
       setStreak(0)
+      const grief = getNextGriefImage()
+      setGriefImage(grief.image)
+      setGriefUltrarare(grief.ultrarare)
       setShowGriefed(true)
     }
     setPhase('feedback')
@@ -218,7 +263,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       {showCelebration && <CelebrationPopup streak={streak} onDismiss={() => setShowCelebration(false)} />}
-      {showGriefed && <Griefed onDismiss={() => setShowGriefed(false)} />}
+      {showGriefed && <Griefed griefImage={griefImage} ultrarare={griefUltrarare} onDismiss={() => setShowGriefed(false)} />}
 
       <div
         className="max-w-2xl mx-auto px-4 pt-4 pb-10 space-y-4"
