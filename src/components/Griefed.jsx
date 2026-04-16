@@ -104,9 +104,24 @@ function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-export default function Griefed({ onDismiss }) {
+export default function Griefed({ griefImage, ultrarare, onDismiss }) {
   const word = pick(WRONG_SLANG)
   const fate = pick(FATE_SLANG)
+
+  if (ultrarare) {
+    return (
+      <div
+        className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 cursor-pointer"
+        onClick={onDismiss}
+      >
+        <img
+          src={griefImage}
+          alt=""
+          className="w-[640px] h-[640px] max-w-[90vw] max-h-[90vh] object-contain"
+        />
+      </div>
+    )
+  }
 
   return (
     <div
@@ -118,7 +133,10 @@ export default function Griefed({ onDismiss }) {
         onClick={e => e.stopPropagation()}
       >
         <div className="px-8 pt-8 pb-6">
-          <div className="text-6xl mb-3">🤡</div>
+          {griefImage
+            ? <img src={griefImage} alt="" className={`${griefImage.includes('grief_28.png') ? 'w-[240px] h-[240px]' : 'w-[120px] h-[120px]'} object-contain mb-3 mx-auto`} />
+            : <div className="text-6xl mb-3">🤡</div>
+          }
           <p className="text-5xl font-extrabold text-red-600 mb-2 tracking-tight leading-tight">
             {word}
           </p>
