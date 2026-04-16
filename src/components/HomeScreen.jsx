@@ -64,12 +64,9 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
       <div className="max-w-lg md:max-w-4xl mx-auto space-y-4">
         <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center">
           <div className="text-5xl mb-3">🧠</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-1">
-            Recovery Counseling Quiz
+          <h1 className="text-2xl font-bold text-slate-800 mb-5">
+            Brandon's "They Can't Stop Me" Promotion Domination Quest
           </h1>
-          <p className="text-slate-500 mb-5 text-xs font-semibold uppercase tracking-widest">
-            M.R.S.T.D. · G.R.A.C.E. · O.A.R.S. · F.O.R.M. · U.P.R.
-          </p>
 
           <div className="border-t border-slate-100 pt-5">
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1">
@@ -83,6 +80,17 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
                 <p className="text-sm text-slate-500 mt-1">
                   Averaged across {aggregate.sectionsAttempted} of {aggregate.sectionsTotal} sections
                 </p>
+                {aggregate.percentage > 95 ? (
+                  <h1 className="text-2xl font-extrabold text-blue-600 mt-4 uppercase">OK NOW YOU OWE CHIP SOME OF THAT NEXT CHECK!</h1>
+                ) : aggregate.percentage > 90 ? (
+                  <h1 className="text-2xl font-extrabold text-blue-600 mt-4 uppercase">YOU FUCKING GOT THIS DOGGIE!!!</h1>
+                ) : aggregate.percentage > 80 ? (
+                  <h2 className="text-lg font-bold text-slate-700 mt-4">You're Killin It Bro!</h2>
+                ) : aggregate.percentage > 75 ? (
+                  <h2 className="text-lg font-bold text-slate-700 mt-4">Go Brando Go!</h2>
+                ) : aggregate.percentage > 50 ? (
+                  <h2 className="text-lg font-bold text-slate-700 mt-4">C'mon Brandon!</h2>
+                ) : null}
               </>
             ) : (
               <>
@@ -105,7 +113,7 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
             return (
               <div
                 key={section.id}
-                className={`bg-white rounded-2xl shadow-md px-5 py-5 border-l-4 ${classes.border}`}
+                className={`bg-white rounded-2xl shadow-md px-5 py-5 border-l-4 ${classes.border} flex flex-col`}
               >
               <h2 className={`text-lg font-bold ${classes.text}`}>{section.title}</h2>
               <p className="text-sm font-semibold text-slate-700">{section.subtitle}</p>
@@ -126,7 +134,7 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
                 )}
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 mt-auto">
                 <button
                   onClick={() => onStartSection(section.id)}
                   className={`${classes.button} text-white font-bold px-4 py-3 rounded-xl transition-colors duration-150 flex-1 min-h-[48px]`}
