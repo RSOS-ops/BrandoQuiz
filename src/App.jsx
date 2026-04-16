@@ -6,8 +6,9 @@ import QuestionBlock from './components/QuestionBlock.jsx'
 import FeedbackSection from './components/FeedbackSection.jsx'
 import CelebrationPopup from './components/CelebrationPopup.jsx'
 import Griefed from './components/Griefed.jsx'
+import WinPopup from './components/WinPopup.jsx'
 import HomeScreen, { SECTIONS } from './components/HomeScreen.jsx'
-import { recordSectionAttempt, incrementLifetimeWrongCount, incrementLifetimeWrongCountUltrarare, resetLifetimeWrongCountUltrarare } from './utils/scoreStorage.js'
+import { recordSectionAttempt, incrementLifetimeWrongCount, incrementLifetimeWrongCountUltrarare, resetLifetimeWrongCountUltrarare, incrementLifetimeCorrectCountRightAnswerRare, resetLifetimeCorrectCountRightAnswerRare } from './utils/scoreStorage.js'
 
 // ── Grief image hat logic ────────────────────────────────────────────────────
 const GRIEF_IMAGE_FILENAMES = [
@@ -98,6 +99,7 @@ export default function App() {
   const [showGriefed, setShowGriefed] = useState(false)
   const [griefImage, setGriefImage] = useState(null)
   const [griefUltrarare, setGriefUltrarare] = useState(false)
+  const [showRightAnswerRare, setShowRightAnswerRare] = useState(false)
   const [homeRefresh, setHomeRefresh] = useState(0)
 
   const currentQuestion = deck[currentQuestionIndex]
@@ -115,6 +117,12 @@ export default function App() {
     const t = setTimeout(() => setShowGriefed(false), griefUltrarare ? 7000 : 5000)
     return () => clearTimeout(t)
   }, [showGriefed, griefUltrarare])
+
+  useEffect(() => {
+    if (!showRightAnswerRare) return
+    const t = setTimeout(() => setShowRightAnswerRare(false), 7000)
+    return () => clearTimeout(t)
+  }, [showRightAnswerRare])
 
   function startSection(sectionId) {
     const newDeck = buildDeckForSection(sectionId)
@@ -140,6 +148,11 @@ export default function App() {
       setScore(s => s + 1)
       setStreak(s => s + 1)
       setShowCelebration(true)
+      const correctCount = incrementLifetimeCorrectCountRightAnswerRare()
+      if (correctCount >= 50) {
+        resetLifetimeCorrectCountRightAnswerRare()
+        setShowRightAnswerRare(true)
+      }
     } else {
       setStreak(0)
       const grief = getNextGriefImage()
@@ -265,6 +278,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50">
       {showCelebration && <CelebrationPopup streak={streak} onDismiss={() => setShowCelebration(false)} />}
       {showGriefed && <Griefed griefImage={griefImage} ultrarare={griefUltrarare} onDismiss={() => setShowGriefed(false)} />}
+      {showRightAnswerRare && <WinPopup image={`${import.meta.env.BASE_URL}win-images/goodboy-1.png`} onDismiss={() => setShowRightAnswerRare(false)} />}
 
       <div
         className="max-w-2xl mx-auto px-4 pt-4 pb-10 space-y-4"
