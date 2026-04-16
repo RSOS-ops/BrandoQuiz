@@ -103,15 +103,15 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
                   Averaged across {aggregate.sectionsAttempted} of {aggregate.sectionsTotal} sections
                 </p>
                 {aggregate.percentage > 95 ? (
-                  <h1 className="text-2xl font-extrabold text-blue-600 mt-4 uppercase">OK NOW YOU OWE CHIP SOME OF THAT NEXT CHECK!</h1>
+                  <h1 className="text-5xl font-extrabold text-blue-600 mt-6 uppercase leading-tight">OK NOW YOU OWE CHIP SOME OF THAT NEXT CHECK!</h1>
                 ) : aggregate.percentage > 90 ? (
-                  <h1 className="text-2xl font-extrabold text-blue-600 mt-4 uppercase">YOU FUCKING GOT THIS DOGGIE!!!</h1>
+                  <h1 className="text-5xl font-extrabold text-blue-600 mt-6 uppercase leading-tight">YOU FUCKING GOT THIS DOGGIE!!!</h1>
                 ) : aggregate.percentage > 80 ? (
-                  <h2 className="text-lg font-bold text-slate-700 mt-4">You're Killin It Bro!</h2>
+                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">You're Killin It Bro!</h1>
                 ) : aggregate.percentage > 75 ? (
-                  <h2 className="text-lg font-bold text-slate-700 mt-4">Go Brando Go!</h2>
+                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">Go Brando Go!</h1>
                 ) : aggregate.percentage > 50 ? (
-                  <h2 className="text-lg font-bold text-slate-700 mt-4">C'mon Brandon!</h2>
+                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">C'mon Brandon!</h1>
                 ) : null}
               </>
             ) : (
