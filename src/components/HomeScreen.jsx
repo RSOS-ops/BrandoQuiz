@@ -83,7 +83,7 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
       <div className="max-w-lg md:max-w-4xl mx-auto space-y-4">
         <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center font-orbitron font-[900]  tracking-wide">
          {/* <div className="text-5xl mb-3">🧠</div> */}
-          <h1 className="text-[41px] md:text-[49px] font-[900] mb-5 leading-tight" style={{ color: '#000000' }}>
+          <h1 className="text-[37px] md:text-[44px] font-[900] mb-5 leading-tight" style={{ color: '#000000' }}>
             Brando's "They Can't Stop Me" Promotion Domination Pack
           </h1>
 
@@ -159,7 +159,7 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
               <div className="flex gap-2 mt-auto">
                 <button
                   onClick={() => onStartSection(section.id)}
-                  className={`${classes.button} text-white font-bold px-4 py-3 rounded-xl transition-colors duration-150 flex-1 min-h-[48px]`}
+                  className={`bg-[#145efc] active:bg-[#0f4cd4] text-white font-bold px-4 py-3 rounded-xl transition-colors duration-150 flex-1 min-h-[48px]`}
                 >
                   Start
                 </button>
