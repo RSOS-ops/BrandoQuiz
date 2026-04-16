@@ -64,7 +64,7 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
       <div className="max-w-lg md:max-w-4xl mx-auto space-y-4">
         <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center">
           <div className="text-5xl mb-3">🧠</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-5">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-5 leading-tight tracking-tight">
             Brandon's "They Can't Stop Me" Promotion Domination Quest
           </h1>
 
