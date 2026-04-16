@@ -13,20 +13,7 @@ export const acronymQuestions = [
     "explanation": "M.R.S.T.D. stands for: M – Motivational Interviewing (MI), R – Rational Emotive Behavior Therapy (REBT), S – Stages of Change, T – Trauma-Informed Care, D – Disease Concept. These five frameworks form the core foundation of professional client interactions in drug and alcohol recovery. Each addresses a different dimension of a client's experience — motivation, thinking patterns, readiness for change, trauma history, and understanding of addiction as a disease."
   },
   {
-    "id": 3,
-    "imageFile": "IMG_20260414_224812.jpg",
-    "question": "Motivational Interviewing (MI) is best described as which type of counseling approach?",
-    "options": [
-      "Directive and confrontational, designed to break through a client's denial",
-      "Psychoanalytic and insight-oriented, focused on uncovering past trauma",
-      "Client-centered and collaborative, designed to help individuals explore and resolve ambivalence about behavior change",
-      "Structured and protocol-driven, following a fixed script of therapeutic interventions"
-    ],
-    "correctAnswer": 2,
-    "explanation": "MI is a client-centered, collaborative counseling approach designed to help individuals explore and resolve ambivalence about behavior change — particularly in addiction. It strengthens motivation and commitment to change by respecting client autonomy, reducing resistance, and fostering an environment where clients feel motivated to make their own decisions about recovery."
-  },
-  {
-    "id": 4,
+    "id": 2,
     "imageFile": "IMG_20260414_224812.jpg",
     "question": "What are the five key principles of Motivational Interviewing, as summarized by the G.R.A.C.E. acronym?",
     "options": [
@@ -39,137 +26,7 @@ export const acronymQuestions = [
     "explanation": "The key principles of MI are summarized in G.R.A.C.E.: Generate a gap (discrepancy between behavior and values), Roll with the resistance (avoid confrontation), Avoid argumentation (arguing triggers defensiveness), Can-do mentality (instill hope and confidence), and Express empathy (active listening, non-judgment). Together these create the non-confrontational, autonomy-supporting environment where lasting change becomes possible."
   },
   {
-    "id": 5,
-    "imageFile": "IMG_20260414_224824.jpg",
-    "question": "In G.R.A.C.E., what does 'G – Generate a Gap' mean, and why is it effective?",
-    "options": [
-      "Identify gaps in the client's clinical history and fill them through intake assessment",
-      "Create space in each session for the client to sit in silence and reflect",
-      "Help the client see the discrepancy between their current behavior and their own values or goals, encouraging self-reflection on the consequences of substance use",
-      "Point out the difference between what the client says and what they actually do, then challenge them to reconcile it"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Generating a gap means helping the client recognize the discrepancy between where they are (current substance use) and where they want to be (their stated values and goals). Crucially, the client articulates this themselves — the counselor does not impose it. Techniques include: developing a discrepancy between behavior and values, allowing clients to present their own arguments for change, and acknowledging both the positives and challenges of change. When clients hear themselves articulate this gap, it creates authentic internal motivation."
-  },
-  {
-    "id": 7,
-    "imageFile": "IMG_20260414_224824.jpg",
-    "question": "What is the G.R.A.C.E. principle 'A – Avoid Argumentation' designed to prevent?",
-    "options": [
-      "Staff members disagreeing with each other in front of clients",
-      "Clients feeling confused by conflicting clinical advice",
-      "Triggering defensiveness in clients, which hinders their motivation to change",
-      "Long, unproductive sessions that exceed scheduled appointment times"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Argumentation triggers defensiveness and hinders change. When a counselor argues for change, the client naturally argues against it — locking them into defending their current behavior. Instead: stay on the client's side, avoid arguing for change, encourage clients to articulate their own reasons for change, and respect client autonomy. Empowering clients to make their own decisions about recovery produces more durable change than winning a debate."
-  },
-  {
-    "id": 8,
-    "imageFile": "IMG_20260414_224824.jpg",
-    "question": "What is the G.R.A.C.E. principle 'C – Can Do,' and how is it applied?",
-    "options": [
-      "Telling clients what they can and cannot do within the program's rules",
-      "Encouraging the client's belief in their ability to change by affirming positive statements and instilling hope and confidence",
-      "Confirming that the client is capable of completing assigned homework tasks",
-      "Documenting the client's demonstrated capabilities for the clinical record"
-    ],
-    "correctAnswer": 1,
-    "explanation": "'C – Can Do' is about encouraging the client's belief in their ability to change and take ownership of their recovery. In practice: increase the client's sense of self as capable, affirm positive statements and behaviors, and offer options that instill hope and confidence. Many clients in recovery carry deep shame and believe they cannot change. The Can-Do principle directly counters this by consistently communicating: 'You are capable of this.' Hope is a therapeutic ingredient, not just emotional support."
-  },
-  {
-    "id": 9,
-    "imageFile": "IMG_20260414_224824.jpg",
-    "question": "What is the G.R.A.C.E. principle 'E – Express Empathy,' and what environment does it create?",
-    "options": [
-      "Sharing personal stories of struggle to show the client they are not alone",
-      "Expressing sympathy by agreeing that the client's situation is unfair or difficult",
-      "Listening actively and without judgment to understand the client's feelings and perspectives, creating a 'free and friendly space'",
-      "Using emotional language and praise to reinforce positive client behaviors"
-    ],
-    "correctAnswer": 2,
-    "explanation": "'E – Express Empathy' means listening actively and without judgment to understand the client's feelings and perspectives, creating a 'free and friendly space' for discussion. Empathy is not sympathy — you are not agreeing with the behavior, you are communicating that you understand their experience. Reflective listening is the primary tool here. Use it to validate the client's experience. When clients feel genuinely understood, they are far more likely to open up and engage in the change process."
-  },
-  {
-    "id": 10,
-    "imageFile": "IMG_20260414_224827.jpg",
-    "question": "What is the 'MI Paradox,' and what does it mean for how you interact with clients?",
-    "options": [
-      "The more information you give a client, the less likely they are to retain it",
-      "An accepting attitude facilitates change; pressure to change thwarts it — people change more when they feel free to choose",
-      "The stronger the therapeutic alliance, the harder it becomes for clients to leave treatment",
-      "Clients who resist the most are secretly the most motivated to change"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The MI Paradox: 'An accepting attitude facilitates change; pressure to change thwarts it.' Acceptance facilitates change because when staff show empathy and understanding, clients feel safe to explore motivations and engage in change. Pressure thwarts change because coercion or judgment triggers defensiveness, undermining autonomy and motivation. Key point: People are more likely to change when they feel free to make their own choices. Pushing harder actually pushes clients away from change."
-  },
-  {
-    "id": 11,
-    "imageFile": "IMG_20260414_224815.jpg",
-    "question": "What is the primary focus and key concept of Rational Emotive Behavior Therapy (REBT)?",
-    "options": [
-      "It focuses on the triggering event — removing the environmental stressor eliminates emotional disturbance",
-      "It focuses on the belief — emotions and behaviors are influenced by beliefs about events, not the events themselves; identify and replace irrational beliefs with rational ones",
-      "It focuses on behavior — changing actions through reinforcement and conditioning reshapes feelings and thoughts",
-      "It focuses on relationships — improving interpersonal dynamics resolves most emotional disturbances"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The focus of REBT is: 'It's not the event, it's the belief.' Emotions and behaviors are influenced by beliefs, not just events. Two people can experience the exact same event and respond completely differently based on their beliefs about it. The goal is to identify irrational beliefs and replace them with rational, constructive thoughts. Staff tip: Encourage clients to pause, identify the belief, and reframe it. Changing thinking patterns leads to healthier emotions and behaviors."
-  },
-  {
-    "id": 14,
-    "imageFile": "IMG_20260414_224815.jpg",
-    "question": "What are the 5 Stages of Change in the correct sequential order?",
-    "options": [
-      "Contemplation → Precontemplation → Preparation → Action → Maintenance",
-      "Precontemplation → Preparation → Contemplation → Action → Maintenance",
-      "Precontemplation → Contemplation → Preparation → Action → Maintenance",
-      "Awareness → Contemplation → Decision → Action → Maintenance"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The 5 Stages of Change: 1. Precontemplation – No perceived need to change. 2. Contemplation – Initial awareness of a problem; ambivalence about change. 3. Preparation – Initial movement away from ambivalence and toward action. 4. Action – The person takes steps to bring about change. 5. Maintenance – The person sustains the change accomplished by previous action. Each stage requires a different counseling approach — meeting the client where they are is the foundation."
-  },
-  {
-    "id": 17,
-    "imageFile": "IMG_20260414_224820.jpg",
-    "question": "What is the primary objective of Trauma-Informed Care in a recovery setting?",
-    "options": [
-      "Processing and resolving past traumatic events through structured therapeutic techniques like EMDR",
-      "Encouraging the client to look at the need to heal in a safe, non-judgmental environment — validating that substance use may have developed as a way to cope with difficult experiences",
-      "Documenting trauma history thoroughly to inform treatment planning and insurance billing",
-      "Separating clients with trauma histories into specialized treatment tracks away from the general population"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The primary objective of Trauma-Informed Care (T in M.R.S.T.D.) is encouraging the client to look at the need to heal in a safe environment. It validates that substance use often develops as a way to cope with difficult or traumatic experiences and focuses on healthier ways to feel safe and supported. Key phrases: 'You've been through a lot, and this is a space where you can start healing at your own pace,' 'Sometimes substance use develops as a way to cope with difficult experiences,' and 'You're in a place where people understand trauma and want to help you heal, not judge you.'"
-  },
-  {
-    "id": 20,
-    "imageFile": "IMG_20260414_224820.jpg",
-    "question": "Define Unconditional Positive Regard (U.P.R.) and how it is applied in practice.",
-    "options": [
-      "Agreeing with all client decisions to maintain a non-confrontational therapeutic relationship",
-      "Accepting and valuing clients without judgment while encouraging their growth and potential; focusing on strengths, avoiding judgment when mistakes are made, and reinforcing positive behaviors and efforts rather than just outcomes",
-      "Providing unconditional praise and positive feedback regardless of client behavior to build confidence",
-      "Withholding all negative feedback until the client has established a stable recovery foundation"
-    ],
-    "correctAnswer": 1,
-    "explanation": "U.P.R. is the practice of accepting and valuing clients without judgment while encouraging their growth and potential. Application in practice: Focus on the client's strengths and potential for change. Avoid judgment, even when clients make mistakes. Encourage clients to see themselves as capable of growth and recovery. Reinforce positive behaviors and efforts, not just outcomes. The Goethe principle: 'If you treat an individual as he is, he will stay as he is, but if you treat him as if he were what he ought to be, he will become what he ought to be.' U.P.R. is believing in the client's potential even when they don't believe in it themselves."
-  },
-  {
-    "id": 26,
-    "imageFile": "IMG_20260414_224820.jpg",
-    "question": "What does U.P.R. stand for?",
-    "options": [
-      "Universal Personal Respect",
-      "Unconditional Positive Regard",
-      "Understanding, Patience, Responsiveness",
-      "Unique Personal Recovery"
-    ],
-    "correctAnswer": 1,
-    "explanation": "U.P.R. stands for Unconditional Positive Regard — accepting and valuing clients without judgment while supporting their growth."
-  },
-  {
-    "id": 21,
+    "id": 3,
     "imageFile": "IMG_20260414_224827.jpg",
     "question": "What are the four core communication techniques in O.A.R.S., and what is the purpose of each?",
     "options": [
@@ -182,20 +39,7 @@ export const acronymQuestions = [
     "explanation": "O.A.R.S.: O – Open-Ended Questions: Invite exploration and self-reflection rather than yes/no answers. Encourages active thinking. Examples: 'What does that look like to you?' 'What are you willing to do to achieve it?' A – Affirmations: Use 'you' statements to highlight strengths and progress. Examples: 'Every day, in every way, you are improving.' 'Your past does not define you.' R – Reflective Listening: Helps clients feel heard. Steps: Focus → Analyze meaning → Reflect back → Check for accuracy. S – Summarize: Reinforces understanding and provides a steppingstone toward change. Use at transition points."
   },
   {
-    "id": 23,
-    "imageFile": "IMG_20260414_224827.jpg",
-    "question": "What are the four steps of Reflective Listening (the 'R' in O.A.R.S.)?",
-    "options": [
-      "Listen → Respond → Record → Review",
-      "Receive → Acknowledge → Redirect → Resolve",
-      "Focus fully on the speaker → Analyze the meaning → Reflect back → Check for accuracy",
-      "Identify the emotion → Name it → Validate it → Offer a solution"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The four steps of Reflective Listening: 1. Focus fully on the speaker — pay close attention and avoid letting your mind wander. 2. Analyze the meaning — determine the underlying message without letting your own opinions interfere. 3. Reflect back — confirm your understanding by paraphrasing or repeating their words. 4. Check for accuracy — allow the client to confirm or clarify your interpretation. This process helps clients feel genuinely heard and understood. When clients feel understood, they are far more willing to explore change."
-  },
-  {
-    "id": 24,
+    "id": 4,
     "imageFile": "IMG_20260414_224829.jpg",
     "question": "What is the F.O.R.M. technique, and what does each letter stand for?",
     "options": [
@@ -208,16 +52,289 @@ export const acronymQuestions = [
     "explanation": "F.O.R.M. is a rapport-building technique used with every client to engage them in conversation and build genuine connection. F – Family (Do you have any kids? Who do you live with?), O – Occupation (What do you do for a living? How long have you been doing that?), R – Recreation (Do you have any healthy hobbies? What do you do for fun?), M – Motivation (What motivates you to get better? Why did you decide to seek help?). This technique helps staff understand the client's life, interests, and motivations while fostering a supportive connection. It makes clinical conversations feel like a real relationship, not an interrogation."
   },
   {
-    "id": 32,
-    "imageFile": "IMG_20260414_224829.jpg",
-    "question": "What are the specific questions a staff member would ask for each letter of F.O.R.M.?",
+    "id": 5,
+    "imageFile": "IMG_20260414_224820.jpg",
+    "question": "What does U.P.R. stand for?",
     "options": [
-      "F: What is your full name and date of birth? | O: Are you currently employed? | R: Do you exercise? | M: Why did you start using?",
-      "F: Do you have any kids? Who do you live with? | O: What do you do for a living? How long have you been doing that? | R: Do you have any healthy hobbies? What do you do for fun? | M: What motivates you to get better? What was the reason you decided to seek help?",
-      "F: Who is your emergency contact? | O: What is your income level? | R: What did you do recreationally while using? | M: What would make you leave treatment?",
-      "F: How is your family handling your addiction? | O: Did substance use affect your job? | R: What hobbies did you lose to addiction? | M: Do you actually want to be here?"
+      "Universal Personal Respect",
+      "Unconditional Positive Regard",
+      "Understanding, Patience, Responsiveness",
+      "Unique Personal Recovery"
     ],
     "correctAnswer": 1,
-    "explanation": "The specific F.O.R.M. questions from the curriculum: F – Family: 'Do you have any kids?' 'Who do you live with?' O – Occupation: 'What do you do for a living?' 'How long have you been doing that?' R – Recreation: 'Do you have any healthy hobbies?' 'What do you do for fun?' M – Motivation: 'What motivates you to get better?' 'What was the reason why you decided to seek help?' These questions are conversational by design — they are meant to feel like natural small talk, not a clinical intake. The goal is to learn who the person is before addressing why they are in treatment."
+    "explanation": "U.P.R. stands for Unconditional Positive Regard — accepting and valuing clients without judgment while supporting their growth."
+  },
+  {
+    "id": 6,
+    "imageFile": "IMG_20260414_224812.jpg",
+    "question": "What does the acronym MI stand for?",
+    "options": [
+      "Medical Intervention",
+      "Motivational Interviewing",
+      "Mindful Inquiry",
+      "Mental Inventory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MI stands for Motivational Interviewing — a client-centered, collaborative counseling approach designed to help individuals explore and resolve ambivalence about behavior change, particularly in the context of addiction. It is the 'M' in M.R.S.T.D."
+  },
+  {
+    "id": 7,
+    "imageFile": "IMG_20260414_224815.jpg",
+    "question": "What does the acronym REBT stand for?",
+    "options": [
+      "Recovery Evaluation and Behavioral Training",
+      "Resilience, Empathy, Balance, and Trust",
+      "Rational Emotive Behavior Therapy",
+      "Relapse Education and Behavioral Treatment"
+    ],
+    "correctAnswer": 2,
+    "explanation": "REBT stands for Rational Emotive Behavior Therapy. Its focus: 'It's not the event, it's the belief.' REBT helps clients move from irrational to rational thinking by identifying irrational beliefs and replacing them with rational, constructive thoughts. It is the 'R' in M.R.S.T.D."
+  },
+  {
+    "id": 8,
+    "imageFile": "IMG_20260414_224812.jpg",
+    "question": "What does the acronym CBT stand for, as referenced in the curriculum?",
+    "options": [
+      "Client-Based Therapy",
+      "Crisis and Behavioral Treatment",
+      "Coping and Boundaries Training",
+      "Cognitive-Behavioral Therapy"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CBT stands for Cognitive-Behavioral Therapy. The curriculum notes that Motivational Interviewing (MI) is often used in combination with other therapeutic approaches, such as CBT, to enhance treatment outcomes."
+  },
+  {
+    "id": 9,
+    "imageFile": "IMG_20260414_224812.jpg",
+    "question": "In the M.R.S.T.D. framework, what does the 'M' stand for?",
+    "options": [
+      "Mindfulness",
+      "Motivational Interviewing",
+      "Mediation",
+      "Management of Addiction"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'M' in M.R.S.T.D. stands for Motivational Interviewing (MI) — a client-centered, collaborative counseling approach that helps clients explore and resolve ambivalence about behavior change."
+  },
+  {
+    "id": 10,
+    "imageFile": "IMG_20260414_224815.jpg",
+    "question": "In the M.R.S.T.D. framework, what does the 'R' stand for?",
+    "options": [
+      "Reflective Listening",
+      "Resilience Building",
+      "Rational Emotive Behavior Therapy",
+      "Recovery Planning"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'R' in M.R.S.T.D. stands for Rational Emotive Behavior Therapy (REBT). Its focus is on identifying irrational beliefs and replacing them with rational, constructive thoughts — 'It's not the event, it's the belief.'"
+  },
+  {
+    "id": 11,
+    "imageFile": "IMG_20260414_224815.jpg",
+    "question": "In the M.R.S.T.D. framework, what does the 'S' stand for?",
+    "options": [
+      "Stages of Change",
+      "Solution-Focused Therapy",
+      "Sobriety Support",
+      "Strengths Assessment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The 'S' in M.R.S.T.D. stands for Stages of Change. These are the five sequential stages — Precontemplation, Contemplation, Preparation, Action, Maintenance — that allow staff to identify where a client is in their change process and tailor the approach accordingly."
+  },
+  {
+    "id": 12,
+    "imageFile": "IMG_20260414_224820.jpg",
+    "question": "In the M.R.S.T.D. framework, what does the 'T' stand for?",
+    "options": [
+      "Talk Therapy",
+      "Trauma-Informed Care",
+      "Therapeutic Alliance",
+      "Transtheoretical Model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'T' in M.R.S.T.D. stands for Trauma-Informed Care — encouraging the client to look at the need to heal in a safe, non-judgmental environment and recognizing that substance use often develops as a way to cope with difficult experiences."
+  },
+  {
+    "id": 13,
+    "imageFile": "IMG_20260414_224820.jpg",
+    "question": "In the M.R.S.T.D. framework, what does the 'D' stand for?",
+    "options": [
+      "Discharge Planning",
+      "Defense Mechanism",
+      "Dialectical Behavioral Therapy",
+      "Disease Concept"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 'D' in M.R.S.T.D. stands for Disease Concept — the understanding that addiction works like other chronic illnesses, affects the brain and behavior, and is treatable. This concept is woven into conversation to counter shame-based thinking about willpower or weakness."
+  },
+  {
+    "id": 14,
+    "imageFile": "IMG_20260414_224824.jpg",
+    "question": "In G.R.A.C.E., what does the 'G' stand for?",
+    "options": [
+      "Guide the client",
+      "Generate a Gap",
+      "Ground the client",
+      "Gather history"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'G' in G.R.A.C.E. stands for Generate a Gap — helping the client see the difference between their current behavior and their own values or goals, encouraging self-reflection on the consequences of substance use."
+  },
+  {
+    "id": 15,
+    "imageFile": "IMG_20260414_224824.jpg",
+    "question": "In G.R.A.C.E., what does the 'R' stand for?",
+    "options": [
+      "Reflect on progress",
+      "Reframe the problem",
+      "Roll with the Resistance",
+      "Reinforce boundaries"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'R' in G.R.A.C.E. stands for Roll with the Resistance — rather than confronting resistance, working with it to help clients feel understood, not defensive. It includes clarifying the client's perspective, inviting new perspectives, and reinforcing the client's role as a problem-solver."
+  },
+  {
+    "id": 16,
+    "imageFile": "IMG_20260414_224824.jpg",
+    "question": "In G.R.A.C.E., what does the 'A' stand for?",
+    "options": [
+      "Affirm the client",
+      "Avoid Argumentation",
+      "Assess motivation",
+      "Advocate for change"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'A' in G.R.A.C.E. stands for Avoid Argumentation. Argumentation triggers defensiveness and hinders change, so MI emphasizes a safe, non-judgmental space. Staff stay on the client's side, avoid arguing for change, and encourage clients to articulate their own reasons for change."
+  },
+  {
+    "id": 17,
+    "imageFile": "IMG_20260414_224824.jpg",
+    "question": "In G.R.A.C.E., what does the 'C' stand for?",
+    "options": [
+      "Confront denial",
+      "Can Do",
+      "Clarify values",
+      "Coach behavior"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'C' in G.R.A.C.E. stands for Can Do — encouraging the client's belief in their ability to change and take ownership of their recovery. It involves increasing the client's sense of self as capable, affirming positive statements and behaviors, and offering options that instill hope and confidence."
+  },
+  {
+    "id": 18,
+    "imageFile": "IMG_20260414_224824.jpg",
+    "question": "In G.R.A.C.E., what does the 'E' stand for?",
+    "options": [
+      "Educate on disease",
+      "Evaluate progress",
+      "Engage the family",
+      "Express Empathy"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 'E' in G.R.A.C.E. stands for Express Empathy — listening actively and without judgment to understand the client's feelings and perspectives, and creating a 'free and friendly space' for discussion. Reflective listening is the primary tool used to validate the client's experience."
+  },
+  {
+    "id": 19,
+    "imageFile": "IMG_20260414_224827.jpg",
+    "question": "In O.A.R.S., what does the 'O' stand for?",
+    "options": [
+      "Observe behavior",
+      "Open-Ended Questions",
+      "Orient to treatment",
+      "Outline goals"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'O' in O.A.R.S. stands for Open-Ended Questions — questions that invite exploration and self-reflection rather than simple yes/no answers. They encourage the client to actively engage their thinking, which supports healthy brain activity and the formation of new neural pathways."
+  },
+  {
+    "id": 20,
+    "imageFile": "IMG_20260414_224827.jpg",
+    "question": "In O.A.R.S., what does the 'A' stand for?",
+    "options": [
+      "Assess risk",
+      "Analyze beliefs",
+      "Affirmations",
+      "Address resistance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'A' in O.A.R.S. stands for Affirmations — 'you' statements that highlight the client's strengths and progress, boosting confidence and motivation. Examples from the curriculum: 'Every day, in every way, you are improving,' 'You are becoming a stronger version of yourself,' 'Your past does not define you.'"
+  },
+  {
+    "id": 21,
+    "imageFile": "IMG_20260414_224827.jpg",
+    "question": "In O.A.R.S., what does the 'R' stand for?",
+    "options": [
+      "Redirect conversation",
+      "Reflective Listening",
+      "Reframe thoughts",
+      "Reinforce sobriety"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'R' in O.A.R.S. stands for Reflective Listening — a technique that helps clients feel heard and understood through four steps: focus fully on the speaker, analyze the meaning, reflect back, and check for accuracy."
+  },
+  {
+    "id": 22,
+    "imageFile": "IMG_20260414_224829.jpg",
+    "question": "In O.A.R.S., what does the 'S' stand for?",
+    "options": [
+      "Support the client",
+      "Summarize",
+      "Set boundaries",
+      "Shift focus"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'S' in O.A.R.S. stands for Summarize. Summarizing reinforces understanding and provides a steppingstone toward change. It is used at transition points or at the end of discussions, with phrases like 'Let me see if I understand so far…,' 'Here's what I've heard…,' and 'Tell me if I missed anything…'"
+  },
+  {
+    "id": 23,
+    "imageFile": "IMG_20260414_224829.jpg",
+    "question": "In F.O.R.M., what does the 'F' stand for?",
+    "options": [
+      "Feelings",
+      "Frequency of use",
+      "Family",
+      "Functioning"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'F' in F.O.R.M. stands for Family. Sample rapport-building questions: 'Do you have any kids?' and 'Who do you live with?' The goal is conversational, not clinical."
+  },
+  {
+    "id": 24,
+    "imageFile": "IMG_20260414_224829.jpg",
+    "question": "In F.O.R.M., what does the 'O' stand for?",
+    "options": [
+      "Origin of use",
+      "Occupation",
+      "Obligations",
+      "Observations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'O' in F.O.R.M. stands for Occupation. Sample rapport-building questions: 'What do you do for a living?' and 'How long have you been doing that?'"
+  },
+  {
+    "id": 25,
+    "imageFile": "IMG_20260414_224829.jpg",
+    "question": "In F.O.R.M., what does the 'R' stand for?",
+    "options": [
+      "Responsibilities",
+      "Recovery goals",
+      "Relationships",
+      "Recreation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 'R' in F.O.R.M. stands for Recreation. Sample rapport-building questions: 'Do you have any healthy hobbies?' and 'What do you do for fun?'"
+  },
+  {
+    "id": 26,
+    "imageFile": "IMG_20260414_224829.jpg",
+    "question": "In F.O.R.M., what does the 'M' stand for?",
+    "options": [
+      "Mental Health",
+      "Motivation",
+      "Medications",
+      "Mood"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'M' in F.O.R.M. stands for Motivation. Sample rapport-building questions: 'What motivates you to get better?' and 'What was the reason why you decided to seek help?'"
   }
 ];

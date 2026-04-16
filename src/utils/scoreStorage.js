@@ -1,5 +1,7 @@
 const SECTIONS = ['acronym', 'situational', 'all']
 const keyFor = (section) => `brandoquiz:score:${section}`
+const LIFETIME_WRONG_KEY = 'brandoquiz:lifetimeWrongCount'
+const LIFETIME_WRONG_ULTRARARE_KEY = 'brandoquiz:lifetimeWrongCountUltrarare'
 
 function readRaw(section) {
   try {
@@ -52,6 +54,40 @@ export function getAllSectionScores() {
     acronym: getSectionScore('acronym'),
     situational: getSectionScore('situational'),
     all: getSectionScore('all'),
+  }
+}
+
+function incrementCounter(key) {
+  let current = 0
+  try {
+    const raw = localStorage.getItem(key)
+    const parsed = raw ? parseInt(raw, 10) : 0
+    if (Number.isFinite(parsed) && parsed >= 0) current = parsed
+  } catch {
+    // ignore
+  }
+  const next = current + 1
+  try {
+    localStorage.setItem(key, String(next))
+  } catch {
+    // ignore
+  }
+  return next
+}
+
+export function incrementLifetimeWrongCount() {
+  return incrementCounter(LIFETIME_WRONG_KEY)
+}
+
+export function incrementLifetimeWrongCountUltrarare() {
+  return incrementCounter(LIFETIME_WRONG_ULTRARARE_KEY)
+}
+
+export function resetLifetimeWrongCountUltrarare() {
+  try {
+    localStorage.setItem(LIFETIME_WRONG_ULTRARARE_KEY, '0')
+  } catch {
+    // ignore
   }
 }
 

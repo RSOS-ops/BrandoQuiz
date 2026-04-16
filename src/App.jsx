@@ -7,7 +7,7 @@ import FeedbackSection from './components/FeedbackSection.jsx'
 import CelebrationPopup from './components/CelebrationPopup.jsx'
 import Griefed from './components/Griefed.jsx'
 import HomeScreen, { SECTIONS } from './components/HomeScreen.jsx'
-import { recordSectionAttempt, incrementLifetimeWrongCount, incrementLifetimeWrongCountUltrarare } from './utils/scoreStorage.js'
+import { recordSectionAttempt, incrementLifetimeWrongCount, incrementLifetimeWrongCountUltrarare, resetLifetimeWrongCountUltrarare } from './utils/scoreStorage.js'
 
 // ── Grief image hat logic ────────────────────────────────────────────────────
 const GRIEF_IMAGE_FILENAMES = [
@@ -27,7 +27,8 @@ function getNextGriefImage() {
   const ultrarareCount = incrementLifetimeWrongCountUltrarare()
   _wrongSinceLastImage++
 
-  if (ultrarareCount >= 30 && ultrarareCount % 30 === 0) {
+  if (ultrarareCount >= 30) {
+    resetLifetimeWrongCountUltrarare()
     return { image: `${import.meta.env.BASE_URL}grief-images/grief-ultrarare.png`, ultrarare: true }
   }
 

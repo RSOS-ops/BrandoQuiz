@@ -5,7 +5,7 @@ const SECTIONS = [
     id: 'acronym',
     title: 'Foundational Knowledge',
     subtitle: 'Acronyms Quiz',
-    description: 'Drill the meanings of M.R.S.T.D., G.R.A.C.E., O.A.R.S., F.O.R.M., and U.P.R.',
+    description: 'Drill the meanings of M.R.S.T.D., G.R.A.C.E., O.A.R.S., F.O.R.M., and More',
     accent: 'blue',
   },
   {
@@ -81,10 +81,10 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
   return (
     <div className="min-h-screen bg-slate-50 p-4" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
       <div className="max-w-lg md:max-w-4xl mx-auto space-y-4">
-        <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center font-black-ops tracking-wide">
+        <div className="bg-white rounded-2xl shadow-md px-6 py-6 text-center font-orbitron font-[900]  tracking-wide">
          {/* <div className="text-5xl mb-3">🧠</div> */}
-          <h1 className="text-3xl md:text-4xl text-slate-800 mb-5 leading-tight">
-            Brandon's "They Can't Stop Me" Promotion Domination Mission
+          <h1 className="text-[41px] md:text-[49px] font-[900] mb-5 leading-tight" style={{ color: '#000000' }}>
+            Brando's "They Can't Stop Me" Promotion Domination Pack
           </h1>
 
           <div className="border-t border-slate-100 pt-5">
@@ -103,15 +103,15 @@ export default function HomeScreen({ onStartSection, onScoresChanged }) {
                   Averaged across {aggregate.sectionsAttempted} of {aggregate.sectionsTotal} sections
                 </p>
                 {aggregate.percentage > 95 ? (
-                  <h1 className="text-5xl font-extrabold text-blue-600 mt-6 uppercase leading-tight">OK NOW YOU OWE CHIP SOME OF THAT NEXT CHECK!</h1>
+                  <h1 className="text-5xl font-orbitron font-[900] text-blue-600 mt-6 uppercase leading-tight tracking-normal">OK NOW YOU OWE CHIP SOME OF THAT NEXT CHECK!</h1>
                 ) : aggregate.percentage > 90 ? (
-                  <h1 className="text-5xl font-extrabold text-blue-600 mt-6 uppercase leading-tight">YOU FUCKING GOT THIS DOGGIE!!!</h1>
+                  <h1 className="text-5xl font-orbitron font-[900] text-blue-600 mt-6 uppercase leading-tight tracking-normal">YOU FUCKING GOT THIS DOGGIE!!!</h1>
                 ) : aggregate.percentage > 80 ? (
-                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">You're Killin It Bro!</h1>
+                  <h1 className="text-4xl font-orbitron font-[900] text-slate-700 mt-6 leading-tight tracking-normal">You're Killin It Bro!</h1>
                 ) : aggregate.percentage > 75 ? (
-                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">Go Brando Go!</h1>
+                  <h1 className="text-4xl font-orbitron font-[900] text-slate-700 mt-6 leading-tight tracking-normal">Go Brando Go!</h1>
                 ) : aggregate.percentage > 50 ? (
-                  <h1 className="text-4xl font-bold text-slate-700 mt-6 leading-tight">C'mon Brandon!</h1>
+                  <h1 className="text-4xl font-orbitron font-[900] text-slate-700 mt-6 leading-tight tracking-normal">C'mon Brandon!</h1>
                 ) : null}
               </>
             ) : (
